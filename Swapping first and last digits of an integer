@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+ 
+int main()
+{
+  	int Number, First_Digit, Digits_Count, Last_Digit, a, b, Swap_Num;
+ 
+  	printf("Please Enter any Number that you wish  : ");
+  	scanf("%d", & Number);
+  	
+  	Digits_Count = log10(Number); 	
+  	First_Digit = Number / pow(10, Digits_Count);
+  	
+  	Last_Digit = Number % 10;
+  	
+  	a = First_Digit * (pow(10, Digits_Count));
+  	b = Number % a;
+  	Number = b / 10;
+  	
+  	Swap_Num = Last_Digit * (pow(10, Digits_Count)) + (Number * 10 + First_Digit);
+	    
+	printf(" \n The Number after Swapping First Digit and Last Digit =  %d", Swap_Num);
+ 
+  	return 0;
+}
